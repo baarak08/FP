@@ -8,6 +8,8 @@ module.exports = (sequelize, Sequelize) => {
     email: Sequelize.STRING,
     avatar: Sequelize.BLOB("long"),
     avatar_url: Sequelize.TEXT,
+    gender: Sequelize.ENUM("MALE", "FEMALE"),
+    birth_date: Sequelize.DATE,
     phone_number: Sequelize.STRING,
     password: Sequelize.STRING,
     verification: { type: Sequelize.BOOLEAN, defaultValue: false },

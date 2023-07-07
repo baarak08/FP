@@ -6,6 +6,7 @@ module.exports = (sequelize, Sequelize) => {
       price: Sequelize.INTEGER,
       photo_product_url: Sequelize.STRING,
       photo_product_blob: Sequelize.BLOB("long"),
+      isDiscount: { type: Sequelize.BOOLEAN, defaultValue: false },
     },
     {
       paranoid: true,

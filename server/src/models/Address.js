@@ -1,6 +1,9 @@
 module.exports = (sequelize, Sequelize) => {
   const Address = sequelize.define("Address", {
-    user_address: Sequelize.STRING,
+    address: Sequelize.STRING,
+    district: Sequelize.STRING,
+    city: Sequelize.STRING,
+    province: Sequelize.STRING,
     longitude: Sequelize.STRING,
     latitude: Sequelize.STRING,
   });

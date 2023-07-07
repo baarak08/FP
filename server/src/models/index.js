@@ -47,11 +47,15 @@ Object.keys(db).forEach((modelName) => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 db.Address = require("./Address")(sequelize, Sequelize);
+db.Province = require("./Province")(sequelize, Sequelize);
+db.City = require("./City")(sequelize, Sequelize);
 db.Branch = require("./Branch")(sequelize, Sequelize);
 db.Product = require("./Product")(sequelize, Sequelize);
 db.Category = require("./Category")(sequelize, Sequelize);
 db.Order = require("./Order")(sequelize, Sequelize);
 db.OrderDetail = require("./OrderDetail")(sequelize, Sequelize);
+db.Discount = require("./Discount")(sequelize, Sequelize);
+db.Voucher = require("./Voucher")(sequelize, Sequelize);
 db.ShippingMethod = require("./ShippingMethod")(sequelize, Sequelize);
 db.Stock = require("./Stock")(sequelize, Sequelize);
 db.StockHistory = require("./StockHistory")(sequelize, Sequelize);
@@ -101,6 +105,11 @@ db.ShippingMethod.belongsTo(db.Order, {
 db.StockHistory.belongsTo(db.Stock, {
   foreignKey: "stock_id",
   as: "Stock",
+});
+
+db.City.belongsTo(db.Province, {
+  foreignKey: "province_id",
+  as: "Province",
 });
 
 module.exports = db;
